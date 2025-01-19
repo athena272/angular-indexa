@@ -1,1 +1,1 @@
-ng generate component componentes/container
+ng generate component components/container
