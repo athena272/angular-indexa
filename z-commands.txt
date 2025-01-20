@@ -1,1 +1,2 @@
 ng generate component components/container
+ng generate component components/header
