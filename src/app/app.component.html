@@ -6,11 +6,13 @@
     [(ngModel)]="filterByText"
   />
   @for (letter of alphabet; track letter) {
-    <app-separator>
-      {{letter}}
-    </app-separator>
-    @for (contact of filterContactsByInitialLetter(letter); track contact.id) {
-      <app-contact [name]="contact.name" [telephone]="contact.telephone"></app-contact>
+    @if (filterContactsByInitialLetter(letter).length > 0) {
+      <app-separator>
+        {{letter}}
+      </app-separator>
+      @for (contact of filterContactsByInitialLetter(letter); track contact.id) {
+        <app-contact [name]="contact.name" [telephone]="contact.telephone"></app-contact>
+      }
     }
   }
 </app-container>
