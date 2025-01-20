@@ -13,5 +13,5 @@ import { SeparatorComponent } from './components/separator/separator.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'angular-indexa';
+  alphabet: string = 'abcdefghijklmnopqrstuvwxyz'
 }
