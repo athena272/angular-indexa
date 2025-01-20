@@ -34,14 +34,19 @@ export class AppComponent {
   contacts: Contact[] = agenda
   filterByText: string = ''
 
+  // Remove accents from a string
+  private removeAccents(text: string): string {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
   filterContactsByText(): Contact[] {
     if (!this.filterByText) return this.contacts
 
-    return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.filterByText.toLowerCase()))
+    return this.contacts.filter(contact => this.removeAccents(contact.name).toLowerCase().includes(this.filterByText.toLowerCase()))
   }
 
   filterContactsByInitialLetter(letter: string): Contact[] {
-    return this.filterContactsByText().filter(contact => contact.name.toLowerCase().startsWith(letter))
+    return this.filterContactsByText().filter(contact => this.removeAccents(contact.name).toLowerCase().startsWith(letter))
   }
 
   // filterContactsByInitialLetter(letter: string): Contact[] {
