@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { ContainerComponent } from '../../components/container/container.component';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [],
+  imports: [ContainerComponent],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.css'
 })
