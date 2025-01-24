@@ -26,7 +26,9 @@ export class ContactFormComponent {
   }
 
   saveNewContact() {
-    console.log("🚀 ~ ContactFormComponent ~ saveNewContact ~ this.contactForm.value:", this.contactForm.value)
+    if (this.contactForm.valid) {
+      console.log("🚀 ~ ContactFormComponent ~ saveNewContact ~ this.contactForm.value:", this.contactForm.value)
+    }
   }
 
   cancelSubmit() {
