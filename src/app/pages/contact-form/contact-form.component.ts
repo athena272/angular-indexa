@@ -3,11 +3,12 @@ import { ContainerComponent } from '../../components/container/container.compone
 import { CommonModule } from '@angular/common';
 import { SeparatorComponent } from '../../components/separator/separator.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [CommonModule, ContainerComponent, SeparatorComponent, ReactiveFormsModule],
+  imports: [CommonModule, ContainerComponent, SeparatorComponent, ReactiveFormsModule, RouterLink],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.css'
 })
