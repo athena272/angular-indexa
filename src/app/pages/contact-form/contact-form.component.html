@@ -26,6 +26,16 @@
     }
     <label for="email">E-mail</label>
     <input type="email" id="email" placeholder="Digite o e-mail do contato" formControlName="email" />
+    @if(contactForm.get('email')?.errors?.['required'] && contactForm.get('email')?.touched) {
+      <div class="error-message">
+        Campo obrigatório
+      </div>
+    }
+    @if(contactForm.get('email')?.errors?.['email'] && contactForm.get('email')?.touched) {
+      <div class="error-message">
+        Formato de e-mail inválido
+      </div>
+    }
     <app-separator></app-separator>
     <label for="birthDate">Aniversário</label>
     <input type="date" id="birthDate" placeholder="Data de nascimento" formControlName="birthDate" />
@@ -37,7 +47,7 @@
     <textarea type="text" id="observations" formControlName="observations"
       placeholder="Coloque observações nesse espaço. Exemplo: Instrutora da academia Nova Imagem, amiga da Júlia"></textarea>
     <section class="botoes">
-      <button class="botao-salvar" type="submit">Salvar contato</button>
+      <button [disabled]="contactForm.invalid" [ngClass]="contactForm.valid ? 'botao-salvar' : 'botao-desabilitado'" type="submit">Salvar contato</button>
       <button (click)="cancelSubmit()" class="botao-cancelar" type="button">Cancelar</button>
     </section>
   </form>
