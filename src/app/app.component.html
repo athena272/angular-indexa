@@ -8,6 +8,7 @@
     type="search"
     placeholder="Digite para buscar"
     [(ngModel)]="filterByText"
+    required
   />
   @for (letter of alphabet; track letter) {
     @if (filterContactsByInitialLetter(letter).length > 0) {
