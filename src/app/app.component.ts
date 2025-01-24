@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SeparatorComponent } from './components/separator/separator.component';
 import { ContactComponent } from './components/contact/contact.component';
 import agenda from './agenda.json'
+import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 
 interface Contact {
   id: number
@@ -24,7 +25,8 @@ interface Contact {
     HeaderComponent,
     SeparatorComponent,
     ContactComponent,
-    FormsModule
+    FormsModule,
+    ContactFormComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
