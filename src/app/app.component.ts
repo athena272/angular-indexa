@@ -20,7 +20,7 @@ interface Contact {
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
+    // RouterOutlet,
     ContainerComponent,
     HeaderComponent,
     SeparatorComponent,
