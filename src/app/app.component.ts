@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 import { ContactListComponent } from './pages/contact-list/contact-list.component';
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
 
@@ -8,7 +9,7 @@ import { ContactFormComponent } from './pages/contact-form/contact-form.componen
   standalone: true,
   imports: [
     CommonModule,
-    // RouterOutlet,
+    RouterOutlet,
     ContactListComponent,
     ContactFormComponent
   ],
