@@ -12,8 +12,18 @@
   <form [formGroup]="contactForm" (ngSubmit)="saveNewContact()">
     <label for="name">Nome</label>
     <input type="text" id="name" placeholder="Digite o nome do contato" formControlName="name" />
+    @if(contactForm.get('name')?.errors && contactForm.get('name')?.touched) {
+      <div class="error-message">
+        Campo obrigatório
+      </div>
+    }
     <label for="telephone">Telefone</label>
     <input type="text" id="telephone" placeholder="Digite o telefone do contato" formControlName="telephone" />
+    @if(contactForm.get('telephone')?.errors && contactForm.get('telephone')?.touched) {
+      <div class="error-message">
+        Campo obrigatório
+      </div>
+    }
     <label for="email">E-mail</label>
     <input type="email" id="email" placeholder="Digite o e-mail do contato" formControlName="email" />
     <app-separator></app-separator>
