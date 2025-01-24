@@ -6,6 +6,12 @@
     [(ngModel)]="filterByText"
     required
   />
+  <section class="add-contact">
+    <button routerLink="/contact-form">
+      <img src="assets/plus.png" alt="">
+      <span>Adicionar contato</span>
+    </button>
+  </section>
   @for (letter of alphabet; track letter) {
     @if (filterContactsByInitialLetter(letter).length > 0) {
       <app-separator>
