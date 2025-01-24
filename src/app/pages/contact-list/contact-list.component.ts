@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { ContactComponent } from '../../components/contact/contact.component';
 import { CommonModule } from '@angular/common';
 import agenda from './agenda.json'
+import { RouterLink } from '@angular/router';
 
 interface Contact {
   id: number
@@ -23,6 +24,7 @@ interface Contact {
     SeparatorComponent,
     ContactComponent,
     FormsModule,
+    RouterLink
   ],
   templateUrl: './contact-list.component.html',
   styleUrl: './contact-list.component.css'
