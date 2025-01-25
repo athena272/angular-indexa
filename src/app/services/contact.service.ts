@@ -18,4 +18,8 @@ export class ContactService {
     // Saving contacts on local storage
     localStorage.setItem('contacts', JSON.stringify(this.contacts))
   }
+
+  getContacts() {
+    return this.contacts
+  }
 }
