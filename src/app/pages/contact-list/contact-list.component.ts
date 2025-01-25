@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ContactComponent } from '../../components/contact/contact.component';
 import agenda from './agenda.json'
 import { Contact } from '../../types/Contact';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-list',
@@ -28,6 +29,10 @@ export class ContactListComponent {
   alphabet: string = 'abcdefghijklmnopqrstuvwxyz';
   contacts: Contact[] = agenda
   filterByText: string = ''
+
+  constructor(contactService: ContactService) {
+
+  }
 
   // Remove accents from a string
   private removeAccents(text: string): string {
