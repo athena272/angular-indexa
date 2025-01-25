@@ -27,11 +27,11 @@ import { ContactService } from '../../services/contact.service';
 })
 export class ContactListComponent {
   alphabet: string = 'abcdefghijklmnopqrstuvwxyz';
-  contacts: Contact[] = agenda
+  contacts: Contact[] = []
   filterByText: string = ''
 
-  constructor(contactService: ContactService) {
-
+  constructor(private contactService: ContactService) {
+    this.contacts = this.contactService.getContacts()
   }
 
   // Remove accents from a string
