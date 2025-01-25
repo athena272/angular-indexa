@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { ContainerComponent } from '../../components/container/container.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { SeparatorComponent } from '../../components/separator/separator.component';
 import { FormsModule } from '@angular/forms';
 import { ContactComponent } from '../../components/contact/contact.component';
-import { CommonModule } from '@angular/common';
 import agenda from './agenda.json'
-import { RouterLink } from '@angular/router';
-
-interface Contact {
-  id: number
-  name: string
-  telephone: string
-}
+import { Contact } from '../../types/Contact';
 
 @Component({
   selector: 'app-contact-list',
