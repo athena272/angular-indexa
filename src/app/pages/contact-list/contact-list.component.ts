@@ -6,7 +6,6 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { SeparatorComponent } from '../../components/separator/separator.component';
 import { FormsModule } from '@angular/forms';
 import { ContactComponent } from '../../components/contact/contact.component';
-import agenda from './agenda.json'
 import { Contact } from '../../types/Contact';
 import { ContactService } from '../../services/contact.service';
 
