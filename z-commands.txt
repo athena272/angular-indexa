@@ -3,6 +3,8 @@ ng generate component components/header
 ng generate component components/separator
 ng generate component pages/contact-form
 ng generate component pages/contact-list
+ng generate service services/contact
 
 ABREVIACAO
 ng g c components/contact
+ng g s services/contact
