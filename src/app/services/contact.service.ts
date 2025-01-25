@@ -25,4 +25,9 @@ export class ContactService {
   getContacts() {
     return this.contacts
   }
+
+  saveNewContact(contact: Contact) {
+    this.contacts.push(contact)
+    localStorage.setItem('contacts', JSON.stringify(this.contacts))
+  }
 }
