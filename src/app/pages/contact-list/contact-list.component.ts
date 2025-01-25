@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ContainerComponent } from '../../components/container/container.component';
@@ -24,12 +24,14 @@ import { ContactService } from '../../services/contact.service';
   templateUrl: './contact-list.component.html',
   styleUrl: './contact-list.component.css'
 })
-export class ContactListComponent {
+export class ContactListComponent implements OnInit {
   alphabet: string = 'abcdefghijklmnopqrstuvwxyz';
   contacts: Contact[] = []
   filterByText: string = ''
 
-  constructor(private contactService: ContactService) {
+  constructor(private contactService: ContactService) { }
+
+  ngOnInit() {
     this.contacts = this.contactService.getContacts()
   }
 
