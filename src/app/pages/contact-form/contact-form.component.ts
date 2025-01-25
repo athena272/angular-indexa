@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SeparatorComponent } from '../../components/separator/separator.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -15,7 +16,7 @@ import { RouterLink } from '@angular/router';
 export class ContactFormComponent implements OnInit {
   contactForm!: FormGroup
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
     this.startForm()
@@ -34,7 +35,9 @@ export class ContactFormComponent implements OnInit {
 
   saveNewContact() {
     if (this.contactForm.valid) {
-      console.log("🚀 ~ ContactFormComponent ~ saveNewContact ~ this.contactForm.value:", this.contactForm.value)
+      const newContact = this.contactForm.value
+      console.log("🚀 ~ ContactFormComponent ~ saveNewContact ~ newContact:", newContact)
+      this.contactService.saveNewContact(newContact)
     }
   }
 
