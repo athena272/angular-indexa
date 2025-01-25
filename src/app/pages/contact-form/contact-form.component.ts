@@ -3,7 +3,7 @@ import { ContainerComponent } from '../../components/container/container.compone
 import { CommonModule } from '@angular/common';
 import { SeparatorComponent } from '../../components/separator/separator.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ContactService } from '../../services/contact.service';
 
 @Component({
@@ -16,7 +16,7 @@ import { ContactService } from '../../services/contact.service';
 export class ContactFormComponent implements OnInit {
   contactForm!: FormGroup
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, private router: Router) { }
 
   ngOnInit() {
     this.startForm()
@@ -38,10 +38,13 @@ export class ContactFormComponent implements OnInit {
       const newContact = this.contactForm.value
       console.log("🚀 ~ ContactFormComponent ~ saveNewContact ~ newContact:", newContact)
       this.contactService.saveNewContact(newContact)
+      this.contactForm.reset()
+      this.router.navigateByUrl('/contact-list')
     }
   }
 
   cancelSubmit() {
     console.log('Cancelling the form submission')
+    this.contactForm.reset()
   }
 }
